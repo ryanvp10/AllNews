@@ -1,8 +1,12 @@
 const request = require('request');
-// const axios = require('axios');
 const cheerio = require('cheerio');
 const source = require('./src/constant');
 
+var detikArticle = require('./models/news').detikArticle;
+var kompasArticle = require('./models/news').kompasArticle;
+var tribunArticle = require('./models/news').tribunArticle;
+var merdekaArticle = require('./models/news').merdekaArticle;
+var liputan6Article = require('./models/news').liputan6Article;
 
 function kompasScrapFunc(){
     request(source.kompas,(err, res, body)=>{
@@ -20,15 +24,25 @@ function kompasScrapFunc(){
                 if(result.title!=="" && result.link!==""){
                     if(titlesArray.indexOf(result.title)==-1){
                         titlesArray.push(result.title);
+                        kompasArticle.count({ title: result.title }, function(err, test) {
+                            if (test === 0) {
+                              var entry = new kompasArticle(result);
+                
+                              entry.save(function(err, doc) {
+                                if (err) {
+                                  console.log(err);
+                                } else {
+                                  console.log(doc);
+                                }
+                              });
+                            }
+                        });
                     }else{
                         console.log('article duplicate/already exist');
                     }
-
                 }else{
                     console.log('not saved, missing data');
                 } 
-
-
             })
         }
     });
@@ -50,6 +64,19 @@ function tribunScrapFunc(){
                 if(result.title!=="" && result.link!==""){
                     if(titlesArray.indexOf(result.title)==-1){
                         titlesArray.push(result.title);
+                        tribunArticle.count({ title: result.title }, function(err, test) {
+                            if (test === 0) {
+                              var entry = new tribunArticle(result);
+                
+                              entry.save(function(err, doc) {
+                                if (err) {
+                                  console.log(err);
+                                } else {
+                                  console.log(doc);
+                                }
+                              });
+                            }
+                        });
                     }else{
                         console.log('article duplicate/already exist');
                     }
@@ -81,6 +108,19 @@ function merdekaScrapFunc(){
                 if(result.title!=="" && result.link!==""){
                     if(titlesArray.indexOf(result.title)==-1){
                         titlesArray.push(result.title);
+                        merdekaArticle.count({ title: result.title }, function(err, test) {
+                            if (test === 0) {
+                              var entry = new merdekaArticle(result);
+                
+                              entry.save(function(err, doc) {
+                                if (err) {
+                                  console.log(err);
+                                } else {
+                                  console.log(doc);
+                                }
+                              });
+                            }
+                        });
                     }else{
                         console.log('article duplicate/already exist');
                     }
@@ -109,6 +149,19 @@ function detikScrapFunc(){
                 if(result.title!=="" && result.link!==""){
                     if(titlesArray.indexOf(result.title)==-1){
                         titlesArray.push(result.title);
+                        detiksArticle.count({ title: result.title }, function(err, test) {
+                            if (test === 0) {
+                              var entry = new detikArticle(result);
+                
+                              entry.save(function(err, doc) {
+                                if (err) {
+                                  console.log(err);
+                                } else {
+                                  console.log(doc);
+                                }
+                              });
+                            }
+                        });
                     }else{
                         console.log('article duplicate/already exist');
                     }
@@ -138,6 +191,19 @@ function liputan6ScrapFunc(){
                 if(result.title!=="" && result.link!==""){
                     if(titlesArray.indexOf(result.title)==-1){
                         titlesArray.push(result.title);
+                        liputan6Article.count({ title: result.title }, function(err, test) {
+                            if (test === 0) {
+                              var entry = new liputan6Article(result);
+                
+                              entry.save(function(err, doc) {
+                                if (err) {
+                                  console.log(err);
+                                } else {
+                                  console.log(doc);
+                                }
+                              });
+                            }
+                        });
                     }else{
                         console.log('article duplicate/already exist');
                     }
