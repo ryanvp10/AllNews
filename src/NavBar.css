@@ -1,0 +1,33 @@
+.iconhome {
+    margin-top: 10px;
+    position: center;
+    padding: 0%;
+}
+
+.hometext {
+    font-size: 12px;
+    margin-top: 0%;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+}
+
+.about {
+    min-height: inherit;
+    height:52px;
+    width: 54px;
+}
+
+.about:hover {
+    background-color: teal;
+}
+
+.home {
+    min-height: inherit;
+    height:52px;
+    width: 54px;
+}
+
+.home:hover {
+    background-color: teal;
+}

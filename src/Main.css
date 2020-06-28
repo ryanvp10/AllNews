@@ -1,0 +1,46 @@
+.titletext {
+    margin-top: 0%;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+}
+
+@media only screen and (max-width: 325px) {
+    .footernote {
+        margin-top: 5%;
+        text-align: right;
+        width: 100%;
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .footernote {
+        margin-top: 5%;
+        text-align: center;
+        width: 100%;
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .footernote {
+        margin-top: 5%;
+        text-align: center;
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footernote {
+        margin-top: 5%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .footernote {
+        margin-top: 1%;
+        text-align: center;
+    }
+}
