@@ -33,9 +33,9 @@ class Main extends Component {
     render() {
         return (
             <HashRouter>
-                <AppBar color="primary" position="fixed">
+                <AppBar style={{background: '#092532'}} position="fixed">
                     <ToolBar style={toolbarStyle}>
-                        <TypoGraphy variant ="title" color="white">
+                        <TypoGraphy variant ="title" color="white" style={{marginLeft: '8.5%'}}>
                             <p class="titletext">All News</p>
                         </TypoGraphy>
                             <NavBar/>

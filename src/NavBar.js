@@ -33,7 +33,7 @@ function NavBar(props) {
                 <div class="home">
                 <ListItemText>
                     <TypoGraphy color="inherit" variant="title">
-                        <NavLink to="/">
+                        <NavLink style={{ textDecoration: 'none' }} to="/">
                             {/* <Home fontSize="small" className={classes.iconHome}></Home> */}
                             <p class="hometext">Home</p>
                         </NavLink>
@@ -43,7 +43,7 @@ function NavBar(props) {
                 <div class="about">
                 <ListItemText>
                     <TypoGraphy color="inherit" variant="title">
-                        <NavLink to="/about">
+                        <NavLink style={{ textDecoration: 'none' }} to="/about">
                             <p class="hometext">About</p>
                         </NavLink>
                     </TypoGraphy>

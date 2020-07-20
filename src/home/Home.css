@@ -15,7 +15,7 @@
 
 @media only screen and (min-width: 1024px) {
     .container {
-        margin-top: 8%;
+        margin-top: 6%;
         margin-left: 10%;
         margin-right: 10%;
     }
@@ -24,3 +24,17 @@
 hr.solid {
     border-top: 3px solid #bbb;
   }
+
+.webname {
+    margin: 0 0 1.5% 0;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: bold;
+    color: #092532;
+}
+
+.headertop {
+    font-family: 'Montserrat';
+    font-size: 33.33px;
+    color: #89c9b8;
+}
